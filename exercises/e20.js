@@ -7,6 +7,23 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
+  let nestedArray = [];
+  let nameWithA = [];
+  let nameNotWithA = [];
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array[i].length; j++) {
+      if (array[i][j] === "a") {
+        nameWithA.push(array[i]);
+        break;
+      }
+      if (array[i][j] !== "a" && j - array[i].length === -1) {
+        nameNotWithA.push(array[i]);
+      }
+    }
+  }
+  nestedArray.push(nameWithA, nameNotWithA);
+  return nestedArray;
 
 }
 
