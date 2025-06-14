@@ -6,7 +6,15 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
-
+  const results = [];
+  let maxBalanceValue = array[0];
+  for (const i of array) {
+    if (i.balance >= maxBalanceValue.balance) {
+      maxBalanceValue = i;
+    }
+  }
+  results.push(maxBalanceValue);
+  return results;
 }
 
 
